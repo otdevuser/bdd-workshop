@@ -1,0 +1,70 @@
+@import 'colours';
+
+fieldset {
+  border: 0;
+  margin: 0;
+  margin-bottom: .5rem;
+  padding: 0;
+}
+
+label {
+  clear: both;
+  color: $c-text-primary;
+  display: block;
+  margin: 0 0 .25rem 0;
+  padding: .24rem 0;
+}
+
+input {
+  border: .0675rem solid $c-input-border;
+  box-shadow: 0 0 .125rem $c-input-border;
+  border-radius: .25rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+  outline: none;
+  padding: .25rem;
+  width: 100%;
+}
+
+button {
+  background-color: none;
+  border: 0;
+  border-radius: .325rem;
+  box-shadow: 0 0 .125rem 0 $c-primary-dark;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: .25rem;
+  outline: 0;
+  padding: .5rem;
+  width: 100%;
+
+  &.primary {
+    background-color: $c-button-primary;
+    color: $c-white;
+  }
+
+  &.secondary {
+    background-color: $c-button-secondary;
+  }
+}
+
+.login-form,
+.registration-form {
+  background-color: $c-white;
+  border: .0625rem solid $c-input-border;
+  border-radius: .5rem;
+  box-shadow: 0 0 .625rem 0 $c-input-border;
+  margin: 0 auto;
+  width: 20rem;
+  padding: 1rem;
+
+  fieldset {
+
+    &:last-child {
+      margin-top: 2rem;
+    }
+  }
+}
