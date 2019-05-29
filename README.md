@@ -25,6 +25,12 @@ npm run test:unit-coverage
 
 ## E2E (BDD) tests
 
+To get BDD tests working, webpack dev server should be up and running. It is
+done by this command:
+```
+npm start
+```
+
 BDD tests are implemented using
 [Cucumber](https://cucumber.io/docs/installation/javascript/) framework and
 assertion library used to validate testing paths is
