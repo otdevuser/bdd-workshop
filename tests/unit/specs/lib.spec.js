@@ -42,11 +42,17 @@ describe('Library', () => {
     expect(result).toEqual(null);
   });
 
+  it('events are not assigned to non-event targets', () => {
+    const el = {};
+    mg.onEvent(el, 'click', () => {});
+    mg.triggerEvent(el, new testDomRoot.window.Event('click'));
+    mg.unEvent(el, 'click', () => {});
+  });
+
   it('onEvent() attaches event to the element', () => {
     const el = mg.findElement('a');
     const spyFunc = spyOn(el, 'addEventListener').and.callThrough();
-    mg.onEvent(el, 'click', () => {
-    });
+    mg.onEvent(el, 'click', () => {});
     mg.triggerEvent(el, new testDomRoot.window.Event('click'));
     expect(spyFunc).toHaveBeenCalled();
   });
