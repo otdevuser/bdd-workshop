@@ -1,0 +1,74 @@
+@import '../../node_modules/foundation-sites/scss/foundation';
+@import 'settings';
+@import 'colours';
+
+@include foundation-xy-grid-classes();
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: $c-dark-blue;
+  height: 4rem;
+}
+
+.c-no-padding {
+  padding: 0 !important;
+}
+
+.patterned-bg {
+  background-image: url('../images/bgc.png');
+  background-repeat: repeat;
+}
+
+.centered-box {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 4rem);
+  justify-content: center;
+}
+
+.centered-element {
+  align-items: center;
+  justify-content: center;
+}
+
+.c-s {
+
+  &.white {
+    background-color: $c-white;
+  }
+
+  &.bordered {
+    border: .0625rem solid $c-input-border;
+    border-radius: .25rem;
+    box-shadow: 0 0 .625rem 0 $c-input-border;
+  }
+
+  &.centered {
+    margin: 0 auto;
+  }
+
+  &.gutter {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  &.large {
+    width: map-get($global-sizes, 'large');
+  }
+
+  &.medium {
+    width: map-get($global-sizes, 'medium');
+  }
+
+  &.small {
+    width: map-get($global-sizes, 'small');
+  }
+
+  &.x-small {
+    width: map-get($global-sizes, 'x-small');
+  }
+}
