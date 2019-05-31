@@ -9,10 +9,15 @@ let mg = new md(document, window);
     throw new Error('Root element not found')
   }
 
+  mg.onEvent(wnd, 'popstate', () => {
+    checkState();
+  });
+
+  /*
   wnd.onpopstate = () => {
-    console.log('History changed');
     checkState();
   };
+  */
 
   const lbtn = mg.findElement('.login-button');
   if (lbtn) {

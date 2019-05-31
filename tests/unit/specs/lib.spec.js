@@ -4,7 +4,6 @@ const md = require('../../../src/js/lib.js');
 describe('Library', () => {
 
   let mg;
-
   let testDomRoot;
 
   beforeEach(() => {
@@ -16,8 +15,7 @@ describe('Library', () => {
       <p class="matchingSelector">Element: Paragraph</p>
       <a href="#">Link</a>
       </body>
-      </html>
-      `
+      </html>`
     );
     global.EventTarget = testDomRoot.window.EventTarget;
     mg = new md(testDomRoot.window.document, testDomRoot.window);

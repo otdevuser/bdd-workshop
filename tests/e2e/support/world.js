@@ -48,7 +48,7 @@ function CustomWorld() {
    * @param {String} cssSelector CSS Selector for element to be found.
    * @return {Boolean} Returns boolean true if element exists, false otherwise.
    */
-  this.elementExists = function elementExists (cssSelector) {
+  this.elementExists = function elementExists(cssSelector) {
     return this.driver
       .findElement(seleniumDriver.By.css(cssSelector))
       .then(
@@ -65,20 +65,26 @@ function CustomWorld() {
       );
   };
 
-  this.saveScreenshot = function saveScreenshot() {
+  this.saveScreenshot = async function saveScreenshot(base64png) {
 
     const mmtime = Date.now();
-    return new Promise((confirm, reject) => {
-      this.driver.takeScreenshot().then((content) => {
-        const fimg = path.resolve(screenshotsDirectory, `./screenshot-${mmtime}.png`);
-        fs.writeFile(
-          path.resolve(fimg),
-          content,
-          'base64',
-          () => (confirm())
-        )
-      }, (err) => (reject(err)));
-    });
+    let result = false;
+    let content;
+    if (base64png) {
+      content = base64png;
+    } else {
+      content = await this.driver.takeScreenshot();
+    }
+    if (content) {
+      const fimg = path.resolve(screenshotsDirectory, `./screenshot-${mmtime}.png`);
+      fs.writeFile(
+        path.resolve(fimg),
+        content,
+        'base64',
+        () => { result = true; }
+      )
+    }
+    return Promise.resolve(result);
   };
 }
 

@@ -14,3 +14,13 @@ header {
     line-height: 130%;
   }
 }
+
+a {
+  color: $c-text-secondary;
+  text-decoration: none;
+
+  &.block-centered {
+    display: block;
+    text-align: center;
+  }
+}
