@@ -2,15 +2,26 @@
 @import 'colours';
 
 body {
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: Roboto, Tahoma, Arial, sans-serif;
   font-size: map-get(map-get($font, 'sizes'), 'regular');
 }
 
-header {
+header,
+footer {
 
   h1 {
     color: $c-white;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 130%;
+  }
+}
+
+a {
+  color: $c-text-secondary;
+  text-decoration: none;
+
+  &.block-centered {
+    display: block;
+    text-align: center;
   }
 }

@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>BDD - Login page</title>
+<title>BDD - Landing page</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body class="patterned-bg">
-  <div id="root-element" class="grid-container fluid c-no-padding">
-    <header class="grid-x centered-element">
-      <h1>Behaviour Driven Design</h1>
-    </header>
+  <header class="grid-x centered-element">
+    <h1>Behaviour Driven Development</h1>
+  </header>
+  <main id="root-element" class="grid-container fluid c-no-padding">
     <div class="grid-x container-login-form">
       <div class="cell centered-box">
         <form name="login-form" class="login-form">
           <fieldset>
-            <label for="form-username">Username</label>
-            <input type="text" name="form-username" placeholder="Username"></input>
+            <label for="login-username">Username</label>
+            <input type="text" name="login-username" placeholder="Username"></input>
           </fieldset>
           <fieldset>
-            <label for="form-password">Password</label>
-            <input type="Password" name="form-password" placeholder="Password"></input>
+            <label for="login-password">Password</label>
+            <input type="Password" name="login-password" placeholder="Password"></input>
           </fieldset>
           <fieldset>
             <button type="button" class="primary login-button">Login</button>
             <button type="button" class="secondary registration-button">Register</button>
           </fieldset>
+          <a href="#" class="block-centered restore-link">Forgot your password?</a>
         </form>
       </div>
     </div>
     <div class="grid-x container-account-details">
       <div class="cell centered-box">
-        <div class="grid-x c-s white small centered bordered gutter">
-          <div class="cell large-4">Your username:</div>
-          <div class="cell large-8">Dummy username</div>
+        <div class="grid-x c-s white x-small centered bordered gutter">
+          <div class="cell"><h3>Account details</h3></div>
+          <div class="cell">
+            <a href="/">Log out</a>
+          </div>
         </div>
       </div>
     </div>
     <div class="grid-x container-registration-form">
       <div class="cell centered-box">
-        <form name="registration-form" class="registration-form">
+        <form
+          name="registration-form"
+          class="registration-form"
+          autocomplete="off"
+        >
           <div class="cell"><h3>Regsitration form</h3></div>
           <fieldset>
             <label for="register-fullname">Your full name:</label>
@@ -46,6 +54,7 @@
               type="text"
               name="register-fullname"
               placeholder="Full name"
+              autocomplete="off"
             ></input>
           </fieldset>
           <fieldset>
@@ -54,6 +63,7 @@
               type="text"
               name="register-username"
               placeholder="Username"
+              autocomplete="off"
             ></input>
           </fieldset>
           <fieldset>
@@ -78,15 +88,19 @@
               type="text"
               name="register-email"
               placeholder="Email address"
+              autocomplete="off"
             ></input>
           </fieldset>
           <fieldset>
-            <button type="button" class="primary register-action-button">Register</button>
+            <button type="button" class="primary register-action-button">Join now</button>
             <button type="button" class="secondary register-cancel-button">Cancel</button>
           </fieldset>
         </form>
       </div>
     </div>
-  </div>
+  </main>
+  <footer class="grid-x centered-element">
+    <h1>Behaviour Driven Development</h1>
+  </footer>
 </body>
 </html>

@@ -4,10 +4,11 @@
   "private": true,
   "description": "BDD Workshop artefacts",
   "scripts": {
+    "test": "npm run test:unit",
     "test:unit": "jasmine --config=tests/unit/jasmine.json",
     "test:unit-coverage": "nyc jasmine --config=tests/unit/jasmine.json",
     "test:e2e": "cucumber-js --require tests/e2e/support/*.js --require tests/e2e/specs/**/*.spec.js tests/e2e/features/**/*.feature",
-    "test:e2e-chrome": "cross-env BDD_BROWSER=chrome npm run test",
+    "test:e2e-chrome": "cross-env BDD_BROWSER=chrome npm run test:e2e",
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server"
   },
