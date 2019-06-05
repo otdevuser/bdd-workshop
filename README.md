@@ -47,6 +47,13 @@ tests by this command:
 npm run test:e2e-chrome
 ```
 
+## Build
+Package building is done with command:
+```
+npm run build
+```
+with results stored in ```dist``` folder that can be hosted on the server.
+
 ### Notes
 BDD tests can be so called "dummy passed" on purpose during BDD workshop
 sessions. Because of this you can find Cucumber tests passing just with
