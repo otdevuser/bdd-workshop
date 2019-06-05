@@ -3,7 +3,7 @@
 fieldset {
   border: 0;
   margin: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
   padding: 0;
 }
 
@@ -23,8 +23,17 @@ input {
   display: block;
   font-size: 1rem;
   outline: none;
-  padding: .25rem;
+  padding: .75rem .5rem;
   width: 100%;
+
+  &::placeholder {
+    color: $c-text-placeholder;
+  }
+
+  &.error-field {
+    border-color: $c-error-red;
+    box-shadow: 0 0 .125rem $c-error-red;
+  }
 }
 
 button {
@@ -57,7 +66,7 @@ button {
   border: .0625rem solid $c-input-border;
   border-radius: .5rem;
   box-shadow: 0 0 .625rem 0 $c-input-border;
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 20rem;
   padding: 1rem;
 

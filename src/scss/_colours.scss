@@ -8,9 +8,12 @@ $c-bright-blue: rgba(120, 97, 188, 1);
 $c-dark-blue: rgba(41, 97, 188, 1);
 
 $c-text-secondary: rgba(128, 128, 128, 1);
+$c-text-placeholder: rgba(196, 196, 196, 1);
 $c-text-primary: rgba(64, 64, 64, 1);
 
-$c-button-primary: $c-dark-blue; //rgba(38, 114, 38, 1);
+$c-button-primary: $c-dark-blue;
 $c-button-secondary: rgba(204, 204, 204, .2);
 
 $c-input-border: rgba(192, 192, 192, 1);
+
+$c-error-red: rgba(128, 0, 0, 1);

@@ -9,7 +9,8 @@ body {
   padding: 0;
 }
 
-header {
+header,
+footer {
   background-color: $c-dark-blue;
   height: 4rem;
 }
@@ -26,7 +27,7 @@ header {
 .centered-box {
   align-items: center;
   display: flex;
-  height: calc(100vh - 4rem);
+  min-height: calc(100vh - 8rem);
   justify-content: center;
 }
 

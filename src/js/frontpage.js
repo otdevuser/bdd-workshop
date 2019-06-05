@@ -1,8 +1,8 @@
 import md from './lib.js';
 
-let mg = new md(document, window);
-
 ((doc, wnd) => {
+
+  let mg = new md(document, window);
 
   const idom = mg.findElement('#root-element');
   if (!idom) {
