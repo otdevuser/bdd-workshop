@@ -10,7 +10,7 @@ Given('I click on {string} field', function(fieldName, done) {
   done();
 });
 
-When('page load completes', function (done) {
+When('page load has finished', function (done) {
   done();
 });
 
@@ -49,6 +49,9 @@ Then(
       el.getAttribute('class').then((cssClassString) => {
         const containsError = cssClassString.indexOf(status) > -1;
         expect(containsError).to.eql(true);
+        this.saveScreenshot().then(() => {
+          done();
+        }).catch(err => { done(new Error(err)); });
         done();
       }).catch((err) => { done(new Error(err)); });
     });

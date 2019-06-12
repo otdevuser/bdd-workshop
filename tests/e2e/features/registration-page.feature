@@ -5,7 +5,6 @@ Feature: Providing registration for users
 
   Scenario: Registration form is available for visitor
     Given I am on the registration page
-    When page load completes
     Then registration form appears on the page
 
   Scenario Outline: Form fields empty value validation
