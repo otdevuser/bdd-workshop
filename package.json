@@ -40,11 +40,11 @@
     "node-sass": "^4.12.0",
     "nyc": "^14.1.1",
     "sass-loader": "^7.1.0",
-    "selenium-webdriver": "^4.0.0-alpha.1",
+    "selenium-webdriver": "^4.0.0-alpha.4",
     "style-loader": "^0.23.1",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1"
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
     "foundation-sites": "^6.5.3"

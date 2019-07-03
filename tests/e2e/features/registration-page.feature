@@ -1,9 +1,9 @@
 Feature: Providing registration for users
   As a website user
   I want to be able to register
-  So that I can access all restricted services
+  So that I can access restricted services
 
-  Scenario: Registration form is available for visitor
+  Scenario: Registration form
     Given I am on the registration page
     Then registration form appears on the page
 
@@ -25,3 +25,17 @@ Feature: Providing registration for users
       | [name='register-password-confirm'] | testpass!        |             |
       | [name='register-email']            |                  | error-field |
       | [name='register-email']            | test@example.com |             |
+
+  Scenario Outline: Full name validation
+    Given I am on the registration page
+    When I enter "<full_name_value>" in the full name field
+    And I am leaving the full name field
+    Then the full name field indicates "<status>"
+
+    Examples:
+      | full_name_value      | status  |
+      |                      | fail    |
+      | Donald Trump         | success |
+      | 4chain               | fail    |
+      | DonaldTrump          | fail    |
+      | Donald Trump Junior  | success |

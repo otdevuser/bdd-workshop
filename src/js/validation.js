@@ -1,27 +1,27 @@
 
-const validation = function () {
+const Validation = function () {
 
   let that = this;
 
-  this.isEmpty = (value) => {
-
+  this.isEmptyString = (value) => {
+    return value === '';
   }
 
-  this.isEmail = (value) => {
-
-  }
-
-  this.lengthMatches = (value, min, max) => {
-    if (min > max) {
+  this.lengthMatches = (value, min = 1, max = undefined) => {
+    if (max && min > max) {
       throw new Error('Minimum length value cannot be greater than maximum');
     }
-    // Convert value to string. Omitting string templating `` for security
-    const str = "" + value;
-    if (str.length > max || str.length < min) {
+    const str = `${value}`;
+    if ((max && str.length > max) || str.length < min) {
       return false;
     }
     return true;
   }
+
+  this.isFullName = (value) => {
+    const rge = new RegExp('^[a-zA-Z]+ (([a-zA-Z])?( )?[a-zA-Z]+)+$');
+    return rge.test(value);
+  }
 }
 
-module.exports = validation;
+module.exports = Validation;
