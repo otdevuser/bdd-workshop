@@ -10,7 +10,7 @@ Given('I click on {string} field', function(fieldName, done) {
   done();
 });
 
-When('page load completes', function (done) {
+When('page load has finished', function (done) {
   done();
 });
 
@@ -38,6 +38,26 @@ When(
   }
 );
 
+When('I enter {string} in the full name field', function (string, done) {
+  this.driver
+    .findElement(By.css('[name="register-fullname"]'))
+    .then((el) => {
+      el.sendKeys(string).then((res) => { done() })
+        .catch(err => { done(new Error(err)); });
+    });
+});
+
+When('I am leaving the full name field', function (done) {
+  this.driver.executeScript(
+    `
+    document.querySelector("[name='register-fullname']")
+    .dispatchEvent(new Event('blur'));
+    `
+  ).then(() => {
+    done()
+  }).catch((err) => { done(new Error(err)); });
+});
+
 Then('registration form appears on the page', function () {
   return this.driver.findElement(By.css('.registration-form'));
 });
@@ -49,8 +69,27 @@ Then(
       el.getAttribute('class').then((cssClassString) => {
         const containsError = cssClassString.indexOf(status) > -1;
         expect(containsError).to.eql(true);
-        done();
+        this.saveScreenshot().then(() => {
+          done();
+        });
       }).catch((err) => { done(new Error(err)); });
     });
   }
 );
+
+Then('the full name field indicates {string}', function (result, done) {
+  this.driver.findElement(By.css('[name="register-fullname"]'))
+    .then((el) => {
+      el.getAttribute('class').then((cssClassString) => {
+        const containsError = cssClassString.indexOf('error-field') > -1;
+        if (result === 'fail') {
+          expect(containsError).to.eql(true);
+        } else {
+          expect(containsError).to.eql(false);
+        }
+        done();
+      }).catch((err) => {
+        done(new Error(err));
+      });
+    });
+});

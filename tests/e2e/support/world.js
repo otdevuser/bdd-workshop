@@ -22,14 +22,19 @@ function CustomWorld() {
     new seleniumDriver.Builder()
       .withCapabilities({ "acceptInsecureCerts": true })
       .forBrowser('chrome')
-      .setChromeOptions(new chrome.Options().headless())
-      .build()
+      .setChromeOptions(new chrome.Options()
+        .headless()
+        .windowSize({ height: 1080, width: 1920 })
+      ).build()
     :
     new seleniumDriver.Builder()
       .withCapabilities({ "acceptInsecureCerts": true })
       .forBrowser('firefox')
-      .setFirefoxOptions(new firefox.Options().headless())
-      .build()
+      .setFirefoxOptions(new firefox.Options()
+        .headless()
+        .addArguments('--width=1920')
+        .addArguments('--height=1080')
+      ).build()
   );
 
   this.driver = getBrowser();
