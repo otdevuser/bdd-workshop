@@ -34,7 +34,7 @@
     "geckodriver": "^1.19.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "jasmine": "^3.4.0",
+    "jasmine": "^3.6.1",
     "jsdom": "^15.1.1",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.14.1",
@@ -42,7 +42,7 @@
     "sass-loader": "^7.1.0",
     "selenium-webdriver": "^4.0.0-alpha.4",
     "style-loader": "^0.23.1",
-    "webpack": "^4.35.2",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.11.0"
   },
