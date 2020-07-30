@@ -11,7 +11,7 @@ Feature: Front page login form
   Scenario: Login form buttons
     Given I am on the front page
     When page loading is finished
-    Then in login form there are login and register buttons
+    Then in the login form there are login and register buttons
 
   Scenario: Login form forgot password link
     Given I am on the front page

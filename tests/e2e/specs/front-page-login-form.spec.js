@@ -48,7 +48,7 @@ When('I entered a correct password', function (done) {
     });
 });
 
-Then('in login form there are login and register buttons', async function () {
+Then('in the login form there are login and register buttons', async function () {
   const loginBtn = await this.elementExists(
     '.login-form button.login-button'
   );

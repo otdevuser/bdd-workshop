@@ -50,11 +50,10 @@ When('I enter {string} in the full name field', function (string, done) {
 When('I am leaving the full name field', function (done) {
   this.driver.executeScript(
     `
-    document.querySelector("[name='register-fullname']")
-    .dispatchEvent(new Event('blur'));
+    !!document.activeElement ? document.activeElement.blur() : null;
     `
   ).then(() => {
-    done()
+      done();
   }).catch((err) => { done(new Error(err)); });
 });
 

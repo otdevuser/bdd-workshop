@@ -13,10 +13,16 @@ const chrome = require('selenium-webdriver/chrome');
 require('chromedriver');
 require('geckodriver');
 
+const currentMoment = new Date().toISOString().replace(/[TZ:\-.]+/g, '');
+
 function CustomWorld() {
 
   const projectRoot = path.resolve(__dirname, './../../..');
-  const screenshotsDirectory = `${projectRoot}/build/screenshots`;
+  const screenshotsDirectory = `${projectRoot}/build/screenshots/${currentMoment}`;
+
+  if (!fs.existsSync(screenshotsDirectory)) {
+    fs.mkdirSync(screenshotsDirectory, {recursive: true});
+  }
 
   const getBrowser = () => (process.env.BDD_BROWSER === 'chrome' ?
     new seleniumDriver.Builder()
@@ -25,6 +31,7 @@ function CustomWorld() {
       .setChromeOptions(new chrome.Options()
         .headless()
         .windowSize({ height: 1080, width: 1920 })
+        .addArguments('--no-sandbox')
       ).build()
     :
     new seleniumDriver.Builder()
@@ -97,5 +104,5 @@ setWorldConstructor(CustomWorld);
 setDefaultTimeout(10 * 1000);
 
 After(function () {
-  return this.driver.quit();
+  return this.saveScreenshot().finally(() => this.driver.quit());
 });
