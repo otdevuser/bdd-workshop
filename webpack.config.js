@@ -20,8 +20,10 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
-    port: 8080,
+    static: {
+      directory: path.resolve(__dirname, './dist')
+    },
+    port: 3001,
     historyApiFallback: {
       rewrites: [
         { from: /^\/$/, to: '/index.html' },

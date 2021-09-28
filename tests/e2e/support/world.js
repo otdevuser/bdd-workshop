@@ -38,7 +38,7 @@ function CustomWorld() {
   );
 
   this.driver = getBrowser();
-  this.testingRootUrl = 'http://localhost:8080';
+  this.testingRootUrl = 'http://localhost:3001';
   this.variable = 0;
 
   this.setTo = (number) => {
