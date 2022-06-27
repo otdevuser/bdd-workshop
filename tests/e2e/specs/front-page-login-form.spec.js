@@ -1,5 +1,5 @@
 const { until, By } = require('selenium-webdriver');
-const { Given, When, Then } = require("cucumber");
+const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require('chai');
 
 When('I entered a non-email text value into username field', function (done) {

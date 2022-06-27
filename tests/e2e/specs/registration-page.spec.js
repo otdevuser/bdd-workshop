@@ -1,5 +1,5 @@
 const { until, By } = require('selenium-webdriver');
-const { Given, When, Then } = require("cucumber");
+const { Given, When, Then } = require("@cucumber/cucumber");
 const { expect } = require('chai');
 
 Given('I am on the registration page', function () {

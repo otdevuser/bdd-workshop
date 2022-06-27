@@ -5,13 +5,13 @@ const {
   setDefaultTimeout,
   setWorldConstructor,
   After
-} = require("cucumber");
+} = require("@cucumber/cucumber");
 const seleniumDriver = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
 const chrome = require('selenium-webdriver/chrome');
 // Load browser drivers for Linux & MacOS
 require('chromedriver');
-require('geckodriver');
+// require('geckodriver');
 
 function CustomWorld() {
 
